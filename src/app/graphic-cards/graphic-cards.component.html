@@ -1,0 +1,18 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Graphic Cards</h3>
+    </div>
+    <div class="panel-body" *ngIf="graphics" >
+        <ul class="list-group" *ngIf="computers">
+            <li class="list-group-item" *ngFor="let card of graphics">
+                <div class="form-check">
+
+                    <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" id="exampleCheck1">
+                    <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{card.name}}({{getCounts(card.name)}}) </a></label>
+
+                  </div>
+
+            </li>
+        </ul>
+    </div>
+</div>

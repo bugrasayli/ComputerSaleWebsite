@@ -1,0 +1,32 @@
+.row{
+    width: 100%;
+}
+.col-md-4{
+    border: 1px solid black; 
+    margin-top: 2%;
+    height: 100%; 
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.col-sm-3half, .col-sm-8half {
+    position: relative;
+    border: 1px solid black; 
+    min-height: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+@media (min-width: 768px) {
+    .col-sm-3half, .col-sm-8half {
+        float: left;
+    }
+    .col-sm-3half {
+        width: 30%;
+    }
+    .col-sm-8half {
+        width: 70.83333333%;
+    }
+}

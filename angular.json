@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Computer"
+    }
+  },
+  "defaultProject": "Computer",
+  "cli": {
+    "analytics": "7ea54adf-7c45-4910-8015-ba572e10ce60"
+  }
 }

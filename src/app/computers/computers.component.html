@@ -1,0 +1,48 @@
+<div class="computer" *ngIf="computers">
+    <div class="col-sm-11half" *ngFor="let computer of computers">
+        <div class="left">
+            <img src="/assets/{{computer.detail.image}}" width="100%" height="100%" alt="">
+        </div>
+        <div class="middle">
+            <h5>
+                <b>
+                    {{computer.name}} {{computer.type.name}}/ {{computer.processor.name}}/ {{computer.graphicCard.name}}
+                </b>
+            </h5>
+            <div class="detail">
+                <label style="font-size: 15px;"> <b>CPU:</b>{{computer.processor.name}}</label><br>
+                <label style="font-size: 15px;"> <b>Graphic Card:</b>{{computer.graphicCard.name}}</label><br>
+                <label style="font-size: 15px;"><b>RAM:</b>{{computer.ram.name}}</label>
+            </div>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <h1 style="text-align: left; font-size: 3vh;font-size: 3vw;"> <i>{{computer.detail.price | number}}
+                            €</i></h1>
+                </li>
+                <li style="font-size: 15px; margin-top: 5%; color: red;">
+                    <img src="/assets/shipping2.png" width="50px" style="margin-right: 2px;" alt="">
+                    free shipping
+                </li>
+            </ul>
+
+
+            <button type="button" style="width: 45%; margin-left: 5%; margin-top: 5%;"
+                class="btn btn-outline-secondary">
+                <img style="margin-bottom: 4px;" src="/assets/cart.png" width="18" /><span style="margin-left: 3px;">
+                    Review</span>
+            </button>
+
+            <button *ngIf="getStock(computer.detail.stockSize)" type="button"
+                style="width: 45%;margin-top: 5%; margin-left: 5%;" class="btn btn-success">
+                <span style="margin-left: 3px;"> Add to Cart</span>
+            </button>
+            <button *ngIf="!getStock(computer.detail.stockSize)" type="button" disabled="true"
+                style="width: 45%; margin-left: 5%;margin-top: 5%;" class="btn btn-success">
+                <span style="margin-left: 3px;"> Out of Stock</span>
+            </button>
+            <img *ngIf="getStock(computer.detail.stockSize)" alt="">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+
+.navbar{
+  background-color: rgb(204, 229, 255);
+}
+.container{
+  max-width: 80%;
+  font-size: 2vh;
+  font-family:Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+#ads{
+  background-color: green;
+  text-align: center;
+  height: 30%;
+  margin-top: 2%;
+}
+.scrolling-box {
+  background-color: #eaeaea;
+  display: block;
+  width: 200px;
+  height: 200px;
+  padding: 1em;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.left{
+  width: 30%;
+  display: inline-block;
+}
+.right{
+  width:68.3%;
+  margin-left: 1.7%;
+  height: 100%;
+  vertical-align: top;
+  display: inline-block;
+  padding-top: 30px;
+}
