@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { BestproductsComponent } from './bestproducts/bestproducts.component';
 import { ComputersComponent } from './computers/computers.component';
+import { RamComponent } from './ram/ram.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ComputersComponent } from './computers/computers.component';
     GraphicCardsComponent,
     SearchComponent,
     BestproductsComponent,
-    ComputersComponent
+    ComputersComponent,
+    RamComponent
   ],
   imports: [
     BrowserModule,

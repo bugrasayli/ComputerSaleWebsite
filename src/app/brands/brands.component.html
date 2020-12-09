@@ -3,12 +3,17 @@
     <h3 class="panel-title">Brands</h3>
   </div>
   <div class="panel-body" *ngIf="Brands">
-    <ul class="list-group" *ngIf="computers">
+    <ul class="list-group" >
       <li class="list-group-item" *ngFor="let brand of Brands">
         
         <div class="form-check">
           <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" id="exampleCheck1" (change)="changeStatus(brand.id,$event)">
-          <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{brand.name}}({{ getCounts(brand.name)}})</a></label>
+          <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{brand.name}}
+            <b>
+
+              ({{ brand.count}})
+            </b>
+          </a></label>
         </div>
       </li>
     </ul>

@@ -1,21 +1,23 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">CPU</h3>
+        <h3 class="panel-title">RAM</h3>
     </div>
-    <div class="panel-body" *ngIf="processors">
+    <div class="panel-body" *ngIf="Rams" >
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let cpu of processors">
+            <li class="list-group-item" *ngFor="let card of Rams">
                 <div class="form-check">
+
                     <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" id="exampleCheck1">
-                    <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{cpu.name}}
+                    <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{card.name}}
                         <b>
 
-                            ({{cpu.count}})
+                            ({{card.count}}) 
                         </b>
                         </a></label>
+
                   </div>
+
             </li>
-           
         </ul>
     </div>
 </div>

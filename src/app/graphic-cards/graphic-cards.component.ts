@@ -16,21 +16,11 @@ export class GraphicCardsComponent implements OnInit {
   computers: computer[];
   a: number[];
   counts = [];
-  constructor(private Service: GraphicService, private ComputerService: ComputerService) { }
+  constructor(private Service: GraphicService) { }
 
   ngOnInit(): void {
     this.Service.GetGraphics().subscribe(x => {
-      this.graphics = x; 
-      this.ComputerService.getComputers().subscribe(x => {
-        this.computers = x;
-      });
+      this.graphics = x;
     });
-    console.log("gqq  q")
-  }
-
-  getCounts(a: string) {
-    console.log(this.computers) 
-    return this.computers.filter(data => data.graphicCard.name.includes(a)).length;
-
   }
 }

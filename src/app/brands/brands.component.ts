@@ -19,16 +19,10 @@ export class BrandsComponent implements OnInit {
     this.service.getBrands().subscribe(x => {
       this.Brands = x;
     });
-    this.computerservice.getComputers().subscribe(data => this.computers = data);
-
+    
   }
   changeStatus(id, event) {
     console.log(id)
     console.log(event)
-  }
-
-  getCounts(a: string) {
-    return this.computers.filter(data => data.brand.name.includes(a)).length;
-
   }
 }
