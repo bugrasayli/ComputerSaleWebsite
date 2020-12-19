@@ -1,0 +1,35 @@
+.collapse{
+    margin-left: 60%;
+    margin-right:30% ;
+}
+li{
+    margin-left: 10%;
+}
+.navbar{
+    background-color: rgb(204, 229, 255);
+    height: 100px;
+  }
+a{
+    font-size: 1vh;
+    font-size: 1vw;
+}   
+.listCart{
+    display: inline-block;
+    width: 100%;
+}
+.img{
+    display: inline-block;
+    
+}
+.detail{
+    display: inline-block;
+    width: 130px;
+    margin-left: 10px;
+}
+.price{
+    display: inline-block;
+    width:50px;
+}
+.total{
+    display: inline-block;
+}

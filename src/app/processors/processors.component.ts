@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CpuService } from '../cpu.service';
+import { CpuServiceService} from '../Services/cpu-service.service';
 
 @Component({
   selector: 'app-processors',
@@ -8,7 +8,7 @@ import { CpuService } from '../cpu.service';
 })
 export class ProcessorsComponent implements OnInit {
 
-  constructor(private service : CpuService) { }
+  constructor(private service : CpuServiceService) { }
   processors = [];
   ngOnInit(): void 
   {

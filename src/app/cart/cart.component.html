@@ -1,0 +1,38 @@
+<li class="nav-item dropdown" style="margin-left: 60%;">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    Shopping Cart
+  </a>
+
+
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-left: -50px;">
+    <div class="dropdown-item" href="#" *ngFor="let item of Items">
+      <div class="listCart">
+        <div class="img">
+          <img src="/assets/{{item.detail.image}}" width="60px" height="50px" />
+        </div>
+        <div class="detail">
+          <span>{{item.name}}</span>
+        </div>
+        <div class="price">
+          <span>{{item.detail.lastPrice}}€</span>
+        </div>
+        <a style="cursor: pointer;" (click)="remove(item.id)">
+          x
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="Total">
+        <span style="font-size: 1vw; ">Total Price: {{getTotal(Items) |number}}€</span>
+      </div>
+      <div style="float: right;">
+        <button type="button" class="btn btn-outline-danger" style="width: 120px;">
+          <img src="/assets/cart.png" width="30px" />
+          Process</button>
+      </div>
+    
+
+  </div>
+</li>

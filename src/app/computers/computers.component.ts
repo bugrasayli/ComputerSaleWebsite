@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ComputerService } from '../computer.service';
+import { ComputerserviceService } from '../Services/computerservice.service' ;
+import { CartserviceService} from '../Services/cartservice.service' ;
 import { computer } from '../Model/computer';
 
 @Component({
@@ -9,7 +10,7 @@ import { computer } from '../Model/computer';
 })
 export class ComputersComponent implements OnInit {
 
-  constructor(private service : ComputerService) { }
+  constructor(private service : ComputerserviceService,private cart : CartserviceService) { }
   computers : computer[];
   ngOnInit(): void {
     this.service.getComputers().subscribe(x => 
@@ -26,6 +27,12 @@ export class ComputersComponent implements OnInit {
     else{
       return true;
     }
+  }
+
+  AddCart(computer : computer)
+  {
+    console.log('It works')
+    this.cart.addProduct(computer);
   }
 
 }

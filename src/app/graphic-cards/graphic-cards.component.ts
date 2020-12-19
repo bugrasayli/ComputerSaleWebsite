@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { GraphicService } from '../graphic.service';
-import { ComputerService } from '../computer.service';
+import { GraphicServiceService} from '../Services/graphic-service.service';
 import { graphicCard } from '../Model/graphiccard';
 import { computer } from '../Model/computer';
 
@@ -16,7 +15,7 @@ export class GraphicCardsComponent implements OnInit {
   computers: computer[];
   a: number[];
   counts = [];
-  constructor(private Service: GraphicService) { }
+  constructor(private Service: GraphicServiceService) { }
 
   ngOnInit(): void {
     this.Service.GetGraphics().subscribe(x => {

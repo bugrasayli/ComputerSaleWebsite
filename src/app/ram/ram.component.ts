@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RamService } from '../ram.service';
+import { RamServiceService} from '../Services/ram-service.service';
 import { ram} from '../Model/ram';
 
 @Component({
@@ -10,13 +10,12 @@ import { ram} from '../Model/ram';
 export class RamComponent implements OnInit {
 
   public Rams = [];
-  constructor(private service: RamService) { }
+  constructor(private service: RamServiceService) { }
 
   ngOnInit(): void {
     this.service.getRams().subscribe(x=> 
       {
-        this.Rams = x,
-        console.log(x)
+        this.Rams = x
       }); 
   }
 

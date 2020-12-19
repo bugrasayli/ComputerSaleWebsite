@@ -1,12 +1,12 @@
 <div class="row">
-    <div class="col-sm-3half">
-      Best Seller
+    <div class="col-sm-3half" *ngIf="BestSeller">
+      {{BestSeller.name}}
     </div>
-    <div class="col-sm-3half">
-      Discount
+    <div class="col-sm-3half" *ngIf="Random">
+      {{Random.name}}
     </div>
-    <div class="col-sm-3half">
-      Out Of Stock
+    <div class="col-sm-3half" *ngIf="discounted">
+      {{discounted.name}}
     </div>
     
     

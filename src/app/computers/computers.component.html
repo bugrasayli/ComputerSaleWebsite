@@ -18,7 +18,7 @@
         <div class="right">
             <ul>
                 <li>
-                    <h1 style="text-align: left; font-size: 3vh;font-size: 3vw;"> <i>{{computer.detail.price | number}}
+                    <h1 style="text-align: left; font-size: 3vh;font-size: 3vw;"> <i>{{computer.detail.lastPrice | number}}
                             €</i></h1>
                 </li>
                 <li style="font-size: 15px; margin-top: 5%; color: red;">
@@ -34,7 +34,7 @@
                     Review</span>
             </button>
 
-            <button *ngIf="getStock(computer.detail.stockSize)" type="button"
+            <button *ngIf="getStock(computer.detail.stockSize)" type="button" (click)="AddCart(computer)"
                 style="width: 45%;margin-top: 5%; margin-left: 5%;" class="btn btn-success">
                 <span style="margin-left: 3px;"> Add to Cart</span>
             </button>

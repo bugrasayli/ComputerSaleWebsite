@@ -12,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { BestproductsComponent } from './bestproducts/bestproducts.component';
 import { ComputersComponent } from './computers/computers.component';
 import { RamComponent } from './ram/ram.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RamComponent } from './ram/ram.component';
     SearchComponent,
     BestproductsComponent,
     ComputersComponent,
-    RamComponent
+    RamComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

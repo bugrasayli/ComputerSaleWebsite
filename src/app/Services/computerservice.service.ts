@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { computer } from './Model/computer';
+import { computer } from '../Model/computer';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ComputerService {
+export class ComputerserviceService {
 
   constructor(private http : HttpClient) { }
   getComputers() : Observable<computer[]>

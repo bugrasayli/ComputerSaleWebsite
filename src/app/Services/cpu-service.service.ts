@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { processor} from './Model/processor';
 
+import { processor} from '../Model/processor';
 @Injectable({
   providedIn: 'root'
 })
-export class CpuService {
+export class CpuServiceService {
 
   constructor(private http : HttpClient) { }
   getProcessors() : Observable<processor[]>

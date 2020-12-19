@@ -1,12 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {HttpClient} from '@angular/common/http'
-import {ram} from './Model/ram'
+
+import { ram} from '../Model/ram';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RamService {
+export class RamServiceService {
 
   constructor(private http: HttpClient) { }
   getRams() : Observable<ram[]>

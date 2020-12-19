@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BrandService } from '../brand.service'
-import { ComputerService } from '../computer.service'
+import { BrandServiceService } from '../Services/brand-service.service'
 import { Brand } from '../Model/brand';
 import { computer } from '../Model/computer';
 
@@ -13,7 +12,7 @@ export class BrandsComponent implements OnInit {
 
   A: boolean;
   computers: computer[]
-  constructor(private service: BrandService, private computerservice: ComputerService) { }
+  constructor(private service: BrandServiceService) { }
   Brands: Brand[];
   ngOnInit(): void {
     this.service.getBrands().subscribe(x => {

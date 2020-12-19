@@ -6,5 +6,6 @@ export class detail{
     stockSize: number;
     image: string;
     lastPrice: number;
+    sold : number;
     
 }
