@@ -7,10 +7,9 @@
             <li class="list-group-item" *ngFor="let card of graphics">
                 <div class="form-check">
 
-                    <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" id="exampleCheck1">
+                    <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" (change)="changeStatus(card.id,$event)" id="exampleCheck1">
                     <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{card.name}}
                         <b>
-
                             ({{card.count}}) 
                         </b>
                         </a></label>

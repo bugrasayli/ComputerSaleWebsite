@@ -6,7 +6,7 @@
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let cpu of processors">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" id="exampleCheck1">
+                    <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" (change) = "changeStatus(cpu.id)" id="exampleCheck1">
                     <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{cpu.name}}
                         <b>
 

@@ -4,14 +4,14 @@
     </div>
     <div class="panel-body" *ngIf="Rams" >
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let card of Rams">
+            <li class="list-group-item" *ngFor="let ram of Rams">
                 <div class="form-check">
 
-                    <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" id="exampleCheck1">
-                    <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{card.name}}
+                    <input type="checkbox" class="form-check-input" style="width: 20px; height: 20px;" id="exampleCheck1" (change)="changeStatus(ram.id,$event)">
+                    <label class="form-check-label" style=" margin-left: 10px;"for="exampleCheck1"><a href=""> {{ram.name}}
                         <b>
 
-                            ({{card.count}}) 
+                            ({{ram.count}}) 
                         </b>
                         </a></label>
 

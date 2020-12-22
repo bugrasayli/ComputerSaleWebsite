@@ -3,6 +3,12 @@ import { ComputerserviceService } from '../Services/computerservice.service' ;
 import { CartserviceService} from '../Services/cartservice.service' ;
 import { computer } from '../Model/computer';
 
+import { brandfilter} from '../Model/Filters/BrandFilter';
+import { cpufilter} from '../Model/Filters/CPUFilter';
+import { graphicfilter} from '../Model/Filters/GraphicFilter';
+import { ramfilter} from '../Model/Filters/RamFilter';
+
+
 @Component({
   selector: 'app-computers',
   templateUrl: './computers.component.html',
@@ -34,5 +40,31 @@ export class ComputersComponent implements OnInit {
     console.log('It works')
     this.cart.addProduct(computer);
   }
+
+  BrandFilter(Brands :brandfilter[])
+  {
+
+  }
+  CPUFilter(Cpu : cpufilter[])
+  {
+
+  }
+  GraphicFilter(Graphic : graphicfilter[])
+  {
+
+  }
+  RamFilter(Ram : ramfilter[])
+  {
+
+  }
+  ReceiveMessage($event)
+  {
+    console.log("works!!")
+  }
+
+
+
+
+
 
 }

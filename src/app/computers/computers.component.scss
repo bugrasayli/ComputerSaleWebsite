@@ -1,7 +1,7 @@
 .computers{
     display: inline;
     margin-bottom: 20px;
-    margin-top: 10%;
+    margin-top: 30%;
     justify-self: start;
     justify-self: start;
   justify-content: center;
@@ -14,23 +14,23 @@
   min-height: 1px;
   padding-left: 16px;
   margin-left: 1%;
-  margin-top: 1%;
+  margin-top: 3%;
 }
 
 @media (min-width: 768px) {
 
   .col-sm-11half {
       width: 90.7%;
-      height: 220px;
+      height: 280px;
   }
 }
 .left{
   padding:1%;
-  width: 20%;
+  width: 30%;
   display: inline-block;
 }
 .middle{
-  width: 50%;
+  width: 40%;
   padding-top: 1%;
   margin-top: 2%;
   display: inline-block;
@@ -47,4 +47,23 @@
 }
 li{
   list-style: none;
+}
+.add{
+  display: inline-block;
+}
+
+.search
+{
+display: inline-block;
+width: 30%;
+margin-left: 1%;
+overflow: hidden;
+}
+.sort
+{
+  overflow: hidden;
+  width: 30%;
+  vertical-align: top;
+  margin-left: 30.6%;
+  display: inline-block;
 }

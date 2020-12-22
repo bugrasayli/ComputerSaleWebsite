@@ -1,13 +1,27 @@
-<div class="row">
-    <div class="col-sm-3half" *ngIf="BestSeller">
-      {{BestSeller.name}}
-    </div>
-    <div class="col-sm-3half" *ngIf="Random">
-      {{Random.name}}
-    </div>
-    <div class="col-sm-3half" *ngIf="discounted">
-      {{discounted.name}}
-    </div>
-    
-    
+<div class="row" *ngIf="BestSeller && discounted && HighRated">
+
+  <div class="col-sm-3half">
+    <h2>Best Seller</h2>
+    <a href="">{{BestSeller.name}}</a>
+    <h3> <i>{{BestSeller.detail.lastPrice | number}}€</i></h3>
+    <img src="/assets/{{BestSeller.detail.image}}" width="100%" height="280px" alt="">
+
   </div>
+  <div class="col-sm-3half">
+    <h3>High Rated</h3>
+    <a href="">{{HighRated.name}}</a>
+    <h2> <i>{{HighRated.detail.lastPrice | number}}€</i>
+    </h2>
+
+    <img src="/assets/{{HighRated.detail.image}}" width="100%" height="280px" alt="">
+  </div>
+  <div class="col-sm-3half">
+    <h3>Discount </h3>
+    <a href="">{{discounted.name}}</a>
+    <h2> <i>{{discounted.detail.lastPrice | number}}€ (%{{discounted.detail.discount}})</i>
+    </h2>
+    <img src="/assets/{{discounted.detail.image}}" width="100%" height="280px" alt="">
+  </div>
+
+
+</div>

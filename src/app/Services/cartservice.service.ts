@@ -1,25 +1,36 @@
 import { Injectable } from '@angular/core';
 import { computer } from '../Model/computer';
+import { cart } from '../Model/cart';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartserviceService {
 
-  items=[];
-  
-  constructor() 
-  {
+  items = [];
+  carts: cart[] = [];
+
+  constructor() {
 
   }
-  getProducts() : Array<computer> {
-    return this.items;
+  getProducts(): Array<cart> {
+    return this.carts;
   }
 
   addProduct(item: computer) {
-    this.items.push(item);
+    console.log(item.id)
+    var Cart: any = new cart(item.id, item.name, item.detail.price, 1, item.detail.image);
+
+    if (this.carts.filter(x => x.computerID == item.id).length == 1) {
+      var b = this.carts.findIndex(x => x.computerID == item.id);
+      this.carts[b].count += 1;
+      console.log(this.carts);
+    }
+    else {
+      this.carts.push(Cart);
+    }
   }
   DeleteProduct(id: number) {
-    this.items = this.items.filter(item => item.id !== id);
+    this.carts = this.carts.filter(item => item.computerID !== id);
   }
 }

@@ -12,7 +12,7 @@ export class BestproductsComponent implements OnInit {
 
   constructor(private service: ComputerserviceService) { }
   BestSeller: computer;
-  Random: computer;
+  HighRated: computer;
   discounted: computer;
   ids: number[] = [];
 
@@ -21,13 +21,8 @@ export class BestproductsComponent implements OnInit {
     this.service.getComputers().subscribe(x => {
       this.computers = x;
       this.BestSeller = this.computers.filter(x => x.detail.sold === Math.max.apply(Math, this.computers.map(function (o) { return o.detail.sold; })))[0];
-
-      this.computers.forEach(element => { this.ids.push(element.id) })
-      let a = Math.floor(Math.random() * this.computers.length)
-      this.Random = this.computers.filter(x => x.id === this.ids[a])[0]
-
+      this.HighRated = this.computers.filter(x => x.rate === Math.max.apply(Math, this.computers.map(function (o) { return o.rate; })))[0];
       this.discounted = this.computers.filter(x => x.detail.discount > 0)[0];
-      console.log(this.discounted);
     });
   }
 }

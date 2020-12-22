@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { cart } from '../Model/cart';
 import { computer } from '../Model/computer';
 import { CartserviceService } from '../Services/cartservice.service';
 
@@ -9,11 +10,11 @@ import { CartserviceService } from '../Services/cartservice.service';
 })
 export class CartComponent implements OnInit {
 
-  Items : computer[];
+  cart : cart[];
   TotalPrice : number=0;
   constructor(private service : CartserviceService) 
   {
-    this.Items = service.getProducts();
+    this.cart = service.getProducts();
     }
 
   ngOnInit(): void {
@@ -22,13 +23,13 @@ export class CartComponent implements OnInit {
   remove(id : number)
   {
   this.service.DeleteProduct(id);
-  this.Items = this.service.getProducts();
+  this.cart = this.service.getProducts();
   }
-  getTotal(items : computer[])
+  getTotal(items : cart[])
   {
     this.TotalPrice=0;
-    this.Items.forEach(element => {
-      this.TotalPrice+=element.detail.lastPrice;
+    this.cart.forEach(element => {
+      this.TotalPrice+=element.Totalprice();
     });
     return this.TotalPrice;
   }

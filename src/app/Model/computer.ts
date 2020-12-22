@@ -18,4 +18,5 @@ export class computer{
     ram: ram;
     detail : detail;
     type : type;
+    rate: number;
 }
