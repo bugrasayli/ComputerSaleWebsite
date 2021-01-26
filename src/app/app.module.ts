@@ -26,6 +26,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { MyordersComponent } from './myorders/myorders.component';
 import { CheckorderComponent } from './myorders/checkorder/checkorder.component';
 import { OrderComponent } from './myorders/order/order.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { OrderComponent } from './myorders/order/order.component';
     InvoiceComponent,
     MyordersComponent,
     CheckorderComponent,
-    OrderComponent
+    OrderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

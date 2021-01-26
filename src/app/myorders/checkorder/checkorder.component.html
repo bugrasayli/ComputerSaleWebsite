@@ -1,6 +1,6 @@
 
     <form class="info" #loginForm="ngForm">
-        <div class="form-row" style="margin-top: 3%;">
+        <div class="form-row" style="margin-top: 3%; ">
             <div class="form-group col-md-4">
                 <label for="mail1">Code*</label>
                 <input type="number" [(ngModel)] = "user.OrderID" name="email" class="form-control" required minlength="10" placeholder="12345">
@@ -25,5 +25,7 @@
             Any order cannot find. Check your informations.
           </div>
         <button type="submit" (click) = "login(user)" [disabled]="!loginForm.form.valid " class="btn btn-primary">Sign in</button>
-
     </form>
+    <div style="height:52vh">
+
+    </div>
