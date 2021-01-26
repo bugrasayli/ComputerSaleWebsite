@@ -1,0 +1,28 @@
+.col-sm-11half {
+    position: relative;
+    min-height: 1px;
+    padding-left: 16px;
+    margin-left: 1%;
+}
+  
+@media (min-width: 768px) {
+    .col-sm-11half {
+        width: 90.7%;
+        height: 600px;
+    }
+  }
+  *{
+    font-family:  New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+}
+tbody{
+    border: 3px solid white;
+    border-radius: 20%;
+    tr {
+width: 100%;
+height:10px;                // <-- the rows height 
+line-height: 100%;
+}
+    }
+th{
+    width: 20%;
+}

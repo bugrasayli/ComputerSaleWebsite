@@ -1,0 +1,22 @@
+<div class="col-sm-11half" style="margin-top: 2%; height: 0%; ">
+    <div class="comments" id="comment" *ngIf="comments.length !=0">
+        <div class="row d-flex justify-content-left mt-100 mb-100" style="margin-top: 1% ; display: none;" *ngFor="let comment of comments    ">
+            <div class="col-lg-12" style="padding: -2%;" >
+                <div class="card" style="padding-top: 1%;">
+                    <div class="d-flex flex-row comment-row m-t-0">
+                        <div class="comment-text w-100">
+                            <h6 class="font-medium" style="font-size: 22px;"> <b>{{comment.userName+ ' '+ comment.userSirname}}</b> 
+                                   </h6> <span style="font-size: 18px;">{{comment.userEmail}}</span> 
+                            <hr style="margin-top: -1px;">
+                            <span class="m-b-15 d-block" style="font-size: 15px;">{{comment.comment}}</span>
+                                <span class="text-muted float-right" style="font-size: 15px;">{{comment.date}}</span>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

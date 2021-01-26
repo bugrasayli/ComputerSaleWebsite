@@ -1,0 +1,53 @@
+<div class="container">
+    <h1 style="margin-top: 1%;">Items Informatins</h1>
+        <hr style="height:1px;border-width:0;color:gray;background-color:rgb(160, 160, 160);">
+    <table class="table" *ngIf="order">
+        <thead>
+            <tr style="margin-top: 10%;">
+                <th scope="col">Code</th>
+                <th scope="col">Name</th>
+                <th scope="col">Details</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let computer of order.computerOrder">
+                <td scope="row"> <b> {{computer.computer.id}}</b></td>
+                <td> <a href="/detail/{{computer.computer.id}}">{{computer.computer.name}}</a></td>
+                <td>{{computer.computer.brand.name}}
+                    /{{computer.computer.graphicCard.name}}/{{computer.computer.ram.name}}</td>
+                <td>{{computer.quantity}}</td>
+                <td>{{computer.price / computer.quantity |number}} €</td>
+                <td>{{computer.price |number}} €</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1 style="margin-top: 1%;">Personal Informations</h1>
+        <hr style="height:1px;border-width:0;color:gray;background-color:rgb(160, 160, 160);">
+
+    <div class="row" style=" margin:3px">
+        <div class="col-sm-2">
+            <ul class="list-group">
+                <li class="list-group-item">Adress:</li>
+                <li *ngIf="order.user.address2" class="list-group-item">Adress-2:</li>
+                <li class="list-group-item">Email:</li>
+                <li *ngIf="order.user.email2" class="list-group-item">Email2:</li>
+                <li class="list-group-item">Phone:</li>
+                <li class="list-group-item">Payment:</li>
+            </ul>
+        </div>
+        <div class="col-sm-10">
+            <ul class="list-group">
+                <li class="list-group-item">{{order.user.address}}</li>
+                <li *ngIf="order.user.address2" class="list-group-item">{{order.user.address2}}</li>
+                <li class="list-group-item">{{order.user.email}}</li>
+                <li *ngIf="order.user.email2" class="list-group-item">{{order.user.email2}}</li>
+                <li class="list-group-item">{{order.user.phone}}</li>
+                <li class="list-group-item">{{order.credit}} **** **** ****</li>
+            </ul>
+        </div>
+    </div>
+</div>

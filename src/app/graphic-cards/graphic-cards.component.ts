@@ -1,9 +1,10 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GraphicServiceService} from '../Services/graphic-service.service';
 import { graphicCard } from '../Model/graphiccard';
 import { computer } from '../Model/computer';
 import { graphicfilter} from '../Model/Filters/GraphicFilter';
+import { FilterService } from '../Services/filter.service';
 
 @Component({
   selector: 'app-graphic-cards',
@@ -17,7 +18,8 @@ export class GraphicCardsComponent implements OnInit {
   computers: computer[];
   a: number[];
   counts = [];
-  constructor(private Service: GraphicServiceService) { }
+  @Output() FilterEvent = new EventEmitter();
+  constructor(private Service: GraphicServiceService,private filterService : FilterService) { }
 
   ngOnInit(): void {
     this.Service.GetGraphics().subscribe(x => {
@@ -31,9 +33,12 @@ export class GraphicCardsComponent implements OnInit {
     let a = this.GraphicFilter.filter(x => x.GraphicID == id)[0];
     if (a.IsChecked == true) {
       this.GraphicFilter.filter(x => x.GraphicID == id)[0].IsChecked = false;
+      this.filterService.removeGraFilter(id);
     }
     else {
       this.GraphicFilter.filter(x => x.GraphicID == id)[0].IsChecked = true;
+      this.filterService.addGraFilter(id);
     }
+    this.FilterEvent.emit(this.filterService.filter);
   }
 }

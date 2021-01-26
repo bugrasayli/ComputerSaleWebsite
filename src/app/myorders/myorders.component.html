@@ -1,0 +1,8 @@
+<app-navigation></app-navigation>
+
+<div *ngIf="!isChecked">
+    <app-checkorder (newItemEvent)="A()"></app-checkorder>
+</div>
+<div *ngIf="isChecked">
+    <app-order ></app-order>
+</div>

@@ -19,20 +19,22 @@ a{
 }
 .img{
     display: inline-block;
-    
 }
 .detail{
-    display: inline-block;
-    width: 130px;
+    width: 200px;
+    height: 100%;
+    word-wrap:break-word;
+    max-width: 40%;
     margin-left: 10px;
 }
 .count{
     display: inline-block;
-    width:20px;
+    width:40%;
 }
 .price{
+    margin-left: 10px;
     display: inline-block;
-    width:50px;
+    width:50%;
 }
 .total{
     display: inline-block;

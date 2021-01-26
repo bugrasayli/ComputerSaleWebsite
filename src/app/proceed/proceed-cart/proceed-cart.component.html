@@ -1,0 +1,161 @@
+<div class="container">
+    <div *ngIf="carts">
+        <h1 style="margin-top: 1%;">Shopping Cart</h1>
+        <hr style="height:1px;border-width:0;color:gray;background-color:rgb(160, 160, 160);">
+        <div>
+            <label id="one">Image</label>
+            <label id="two">Product Name</label>
+            <label id="two">Product Code</label>
+            <label id="one">Count</label>
+            <label id="two">One Price</label>
+            <label id="two">Total Price</label>
+        </div>
+
+        <hr style="height:1px;border-width:0;color:gray;background-color:rgb(160, 160, 160);">
+
+        <div>
+            <div *ngFor="let computer of carts" style="margin-top: 1%; ">
+                <div>
+                    <div class="name" style="vertical-align: top;" id="one">
+                        <img src="/assets/{{computer.img}}" width="100%" height="100px" alt="">
+                    </div>
+                    <div class="name" id="two" style="margin-left: 2%;">
+                        <h5>
+                            <b>{{computer.name}}</b>
+                        </h5>
+                        <p style="font: lighter; ">
+                            Brand:{{computer.brand}} / Graphic Card:{{computer.graphic}}
+                        </p>
+
+                    </div>
+                    <div class="name" id=two style="text-align: center;">
+                        {{computer.computerID}}
+                    </div>
+                    <div class="name" id="one" style="text-align: center;">
+                        {{computer.count}}
+                    </div>
+                    <div class="name" id="two" style="text-align: center;">
+                        {{computer.price | number}}€
+                    </div>
+                    <div class="name" id=two style="text-align: center;">
+                        <h5>
+                            <b>
+                                {{computer.Totalprice |number}} €
+                            </b>
+                        </h5>
+
+                    </div>
+                </div>
+                <div style="margin-left: 12%; width: 30%;display: inline-block; vertical-align: top;">
+                    <a class="btn btn-default" style="background-color: rgb(242,242,242);" data-toggle="collapse"
+                        href="#col{{computer.computerID}}">Protection</a>
+                    <div class="collapse" id="col{{computer.computerID}}">
+                        <div class="card card-body" style="background-color: transparent;">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios{{computer.computerID}}"
+                                    id="exampleRadios{{computer.computerID}}" value="{{computer.computerID}}"
+                                    (change)="something(computer.computerID,'0')">
+                                <label class="form-check-label">
+                                    None
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios{{computer.computerID}}"
+                                    id="exampleRadios{{computer.computerID}}" value="{{computer.computerID}}"
+                                    (change)="something(computer.computerID,'1')">
+                                <label class="form-check-label" for="exampleRadios{{computer.computerID}}">
+                                    One Year(+{{(computer.Totalprice * 10 )/ 100 | number}} €)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios{{computer.computerID}}"
+                                    id="exampleRadios{{computer.computerID}}" value="{{computer.computerID}}"
+                                    (change)="something(computer.computerID,'2')">
+                                <label class="form-check-label" for="exampleRadios{{computer.computerID}}">
+                                    Two Year(+{{(computer.Totalprice * 15 )/ 100 | number}} €)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="height:1px;border-width:0;color:gray;background-color:rgb(160, 160, 160);">
+
+            </div>
+
+            <div class="last">
+                <div class="cont">
+                    <p style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor
+                        incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex
+                        ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat
+                        nulla pariatur.</p>
+                </div>
+                <div class="ship">
+                    <div style="margin-left: 12%; width: 80%; display: inline-block">
+                        <a class="btn btn-default" style="background-color: rgb(242,242,242);" data-toggle="collapse"
+                            href="#ship">Shipping</a>
+                        <div class="collapse" id="ship">
+                            <div class="card card-body" style="background-color: transparent;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios"
+                                        value="0" (change)="Shipping(0)" checked>
+                                    <label class="form-check-label">Normal</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios"
+                                        value="1" (change)="Shipping(1)">
+                                    <label class="form-check-label" for="exampleRadios">Fast(50 €) </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <div class="exp" style="width :40%; display: inline-block">
+                        Products <br>
+                        Taxes
+                        Protection
+                        Shipping
+                        <hr style="color: black; background-color: black; width: 0  ;">
+                        Total
+                    </div>
+                    <div class="exp" style="width :60%; display: inline-block">
+                        <h5><b>{{TotalPrice *(95/100) |number}} € <br></b></h5>
+                        <h5><b>{{TotalPrice * (5/100) |number}} €</b></h5>
+                        <h5><b>{{insurance}} €<br></b></h5>
+                        <h5><b>{{shipping}} €<br></b></h5>
+                        <h5>
+                            <hr style="color: black; background-color: black;"><b>{{TotalPrice + insurance+shipping
+                                |number}} €</b>
+                        </h5>
+                    </div>
+
+                </div>
+                <hr style="height:2px;border-width:0;color:gray;background-color:black; margin-top: 2%;">
+                <div class="btns">
+                    <div class="leftBtn" style="width:20%; float: left;">
+                        <button type="button" class="btn btn-primary" style="width: 100%; margin-left: 10%;"> To
+                            Shopping</button>
+                    </div>
+                    <div class="middle" style="width:60%; float: right;">
+                    </div>
+                    <div class="rightBtn" style="width:20%; float: right;">
+                        <button type="button" (click)="ToUser(carts)" class="btn btn-success" style="width: 100%; margin-left: -10%;">Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!carts">
+        <h1>EMPTY</h1>
+
+        <br>
+        <a href="" class="btn btn-primary" style="width: 100%; margin-left: 10%;">Return to Shopping</a>
+    </div>
+</div>
+

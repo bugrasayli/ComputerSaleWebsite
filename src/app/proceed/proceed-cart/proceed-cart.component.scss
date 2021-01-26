@@ -1,0 +1,68 @@
+.container{
+    max-width: 80%;
+    font-size: 2vh;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;}
+  h5{
+    font-size: 2vh;
+  }
+  *{
+      font-family:  New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+  }
+  .col-sm-11half {
+      position: relative;
+      min-height: 1px;
+      padding-left: 16px;
+      margin-left: 1%;
+  }
+  label{ 
+    font-weight: bolder;
+    text-align: center;
+  }
+    #one{ 
+    width: 10%;
+  }
+    #two{
+    width: 19%;
+  }
+  
+  .name{
+    display: inline-block;
+  }
+  p{
+      font-size: 15px;
+      float: left;
+  }
+  .cont{
+      width: 50%;
+      display: inline-block;
+    }
+    .ship
+    {
+        display: inline-block;
+        width: 26%;
+        vertical-align: top;
+    }
+  .total
+  {
+      width: 19%;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .last
+  {
+      height: 100%;
+      min-height: 100%;
+      margin-bottom: 100px;
+      border: 2px solid black;
+      vertical-align: top;
+      background-color: rgb(242, 242, 242,0.4);
+      
+      display: inline-block;
+      width: 100%;
+    }
+    .btns{
+        margin-top: 4%;
+        margin-bottom: 8%;
+    }

@@ -1,0 +1,18 @@
+<div class="col-sm-11half" style="margin-top: 1%;" *ngIf="similars.length!=0">
+    <h2><b>Similar Products</b></h2>
+    <hr style="border-top: 2px solid black;;">
+    <div class="row">
+        <div class="col-sm-3"
+            style="border: 4px solid rgb(231, 230, 230); margin-left: 5%; padding: 1%; border-radius: 10px; "
+            *ngFor="let com of similars">
+            <div class="img">
+                <img src="/assets/{{com.detail.image}}" width="100%" height="120%" alt="">
+            </div>
+            <div class="name" style="text-align: center;">
+                <a href="/detail/{{com.id}}"
+                    style="color: black;  text-decoration: none; text-align: center;">{{com.name}}</a>
+                <h1 style="color: rgb(230,45,67); margin-top: -2%;"><b>{{com.detail.lastPrice | number}} €</b></h1>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="row" style="margin-top: 2%; ">
+  <div class="col-75">
+    <div class="container">
+
+
+      
+      <form #paymentForm = "ngForm">
+        <div class="row">
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" [(ngModel)]='credit.NameSurname' required minlength="5"
+              placeholder="John More Doe">
+
+            <label for="ccnum">Credit card number</label>
+            <input type="number" style="padding: 1%; width: 50%;" id="ccnum" name="cardnumber" minlength="16"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              required maxlength="16" minlength="16" maxlength="16" [(ngModel)]='credit.CardNumber' placeholder="1111-2222-3333-4444">
+
+            <div class="row" style="margin-top: 2%;">
+              <div class="col-25">
+                <label for="expmonth">Expired Month</label>
+                <input type="number" style="padding: 2%;" id="expmonth" name="expmonth"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  required maxlength="2" minlength="1" [(ngModel)]='credit.ExpiredMonth' placeholder="11">
+              </div>
+              <div class="col-25">
+                <label for="expyear">Expired Year</label>
+                <input type="number" style="padding: 2%;" id="expyear" name="expyear"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  required maxlength="4"  minlength="3" [(ngModel)]='credit.ExpiredYear' placeholder="2022">
+              </div>
+
+              <div class="col-25">
+                <label for="cvv">CVV</label>
+                <input type="number" style="padding: 2%;" id="cvv" name="cvv"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  required minlength="2" maxlength="3"   [(ngModel)]='credit.CVV' placeholder="123">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <label style="margin-top: 2%;">
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <div *ngIf="isPaid==1" class="alert alert-danger" role="alert">
+          Card informations is not correct.. Please Try Again.
+        </div>
+        <div *ngIf="isPaid==2" class="alert alert-success" role="alert">
+          Payment is OK..
+        </div>
+        <div *ngIf="isPaid==3" class="alert alert-danger" role="alert">
+          Unknown Error..
+        </div>
+        <div *ngIf="isPaid==4" class="alert alert-danger" role="alert">
+          Not Enough Stock..
+        </div>
+        <input type="button" class="btn btn-primary" style="width: 30%; background-color: rgb(0,123,255);" value="Go back" (click)="Goback()">
+        <input type="button" class="btn btn-success" style="width: 30%; margin-left: 40%;" [disabled] ="!paymentForm.form.valid" value="Continue to checkout" (click)="Pay(credit)">
+        
+      </form>
+    </div>
+  </div>
+
+
+</div>

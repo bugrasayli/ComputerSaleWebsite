@@ -1,2 +1,8 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-html, body {height:100%;width: 100%;}
+html, body {
+    height:100%;
+    width: 100%;
+}
+body{
+    background-image: url('./assets/bg6.jpg');
+}

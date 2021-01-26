@@ -19,7 +19,7 @@ export class CartserviceService {
 
   addProduct(item: computer) {
     console.log(item.id)
-    var Cart: any = new cart(item.id, item.name, item.detail.price, 1, item.detail.image);
+    var Cart: any = new cart(item.id, item.name, item.detail.lastPrice,item.brand,item.graphicCard,item.ram, 1, item.detail.image,0,0);
 
     if (this.carts.filter(x => x.computerID == item.id).length == 1) {
       var b = this.carts.findIndex(x => x.computerID == item.id);
@@ -33,4 +33,6 @@ export class CartserviceService {
   DeleteProduct(id: number) {
     this.carts = this.carts.filter(item => item.computerID !== id);
   }
+
+  
 }

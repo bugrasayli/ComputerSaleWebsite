@@ -1,41 +1,57 @@
 <li class="nav-item dropdown" style="margin-left: 10%;">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false">
+  <a class="nav-link dropdown-toggle" href="#" style="color: white;" id="navbarDropdown" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Shopping Cart
   </a>
 
-
   <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-left: -50px;">
-    <div class="dropdown-item" href="#" *ngFor="let item of cart">
-      <div class="listCart">
-        <div class="img">
-          <img src="/assets/{{item.img}}" width="60px" height="50px" />
+    <div *ngIf="cart">
+
+      <div class="dropdown-item" href="#" *ngFor="let item of cart">
+        <div class="listCart">
+          <div class="img">
+            <img src="/assets/{{item.img}}" width="50px" height="50px" />
+
+            <div style="display: inline-block; vertical-align: top;">
+
+              <div class="detail">
+                <span><b>{{item.name}}</b></span>
+              </div>
+
+              <div class="price">
+                <span>{{item.price* item.count | number}}€</span>
+              </div>
+
+              <div class="count">
+                <span>{{item.count}}</span>
+              </div>
+            </div>
+          </div>
+
+          <a style="cursor: pointer; margin-left: 5%;" (click)="remove(item.computerID)">
+            x
+          </a>
         </div>
-        <div class="detail">
-          <span>{{item.name}}</span>
-        </div>
-        <div class="count">
-          <span>{{item.count}}</span>
-        </div>
-        <div class="price">
-          <span>{{item.Totalprice()}}€</span>
-        </div>
-        <a style="cursor: pointer;" (click)="remove(item.computerID)">
-          x
-        </a>
       </div>
     </div>
 
-    
-      <div class="Total">
-        <span style="font-size: 1vw; ">Total Price: {{getTotal(cart) |number}}€</span>
-      </div>
-      <div style="float: right;">
-        <button type="button" class="btn btn-outline-danger" style="width: 120px;">
-          <img src="/assets/cart.png" width="30px" />
-          Process</button>
-      </div>
-    
 
+
+    <div class="Total" style="vertical-align: top;" *ngIf="!cart">
+      <span style="font-size: 1vw; ">EMPTY</span>
+    </div>
+    <div *ngIf="cart">
+      <div class="Total" style="vertical-align: top; margin-left: 7%;">
+        <span style="font-size: 2vw;font-size: 2vh ">Last: {{getTotal(cart) |number}}€</span>
+      </div>
+      <div>
+        <button type="button" class="btn btn-outline-danger" (click)="Clear()" style="width: 41%; margin-left: 6%; ">
+          Clear</button>
+
+        <button type="button" class="btn btn-outline-success" (click)="Buy()" style="width: 41%; margin-left: 6%; ">
+          <img src="/assets/cart.png" width="20px" />
+          Proceed</button>
+      </div>
+    </div>
   </div>
 </li>

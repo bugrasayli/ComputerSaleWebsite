@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { cart } from '../Model/cart';
-import { computer } from '../Model/computer';
-import { CartserviceService } from '../Services/cartservice.service';
+import { LocalCartService } from '../Services/local-cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -9,29 +9,36 @@ import { CartserviceService } from '../Services/cartservice.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  cart: cart[] = [];
+  TotalPrice;
+  message: string;
 
-  cart : cart[];
-  TotalPrice : number=0;
-  constructor(private service : CartserviceService) 
-  {
-    this.cart = service.getProducts();
-    }
-
+  constructor(private service: LocalCartService,private router: Router) {
+  }
   ngOnInit(): void {
-
+    this.service.getProducts().subscribe(x => this.cart = x)
   }
-  remove(id : number)
-  {
-  this.service.DeleteProduct(id);
-  this.cart = this.service.getProducts();
+  remove(id: number) {
+    this.service.DeleteProduct(id);
+    this.service.getProducts().subscribe(x => {
+      this.cart=x;
+      if(cart.length ==0)
+      this.cart = null;
+    });
   }
-  getTotal(items : cart[])
-  {
-    this.TotalPrice=0;
+  getTotal(items: cart[]) {
+    this.TotalPrice = 0;
     this.cart.forEach(element => {
-      this.TotalPrice+=element.Totalprice();
+      this.TotalPrice += (element.price * element.count);
     });
     return this.TotalPrice;
+  }
+  Clear() {
+    this.service.Clear();
+    this.cart = [];
+  }
+  Buy() {
+    this.router.navigate(['/proceed']);
   }
 
 }

@@ -1,0 +1,17 @@
+<app-navigation>
+</app-navigation>
+
+<div *ngIf="cartPro">
+    <app-proceed-cart (newItemEvent)="User()">
+    </app-proceed-cart>
+</div>
+
+<div *ngIf="user">
+    <app-proceed-user (newItemEvent)="Payment()">
+    </app-proceed-user>
+</div>
+
+<div *ngIf="payment">
+    <app-proceed-payment (newItemEvent)="User()">
+    </app-proceed-payment>
+</div>

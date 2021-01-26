@@ -1,0 +1,22 @@
+.col-sm-11half {
+    position: relative;
+    min-height: 1px;
+    padding-left: 16px;
+    margin-left: 1%;
+}
+  
+@media (min-width: 768px) {
+    .col-sm-11half {
+        width: 90.7%;
+        height: 600px;
+    }
+  }
+  *{
+    font-family:  New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+}
+
+.name a{
+    font-weight: bolder;
+    font-size: 1.2vh;
+    font-size: 1.2vw;
+  }

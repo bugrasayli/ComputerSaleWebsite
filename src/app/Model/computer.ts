@@ -8,12 +8,17 @@ import { detail } from './detail';
 import { type } from './type';
 
 export class computer{
+
+    constructor() {
+        
+
+    }
     id:number;
     name: string;
     brand: Brand;
     graphicCard : graphicCard;
     memory : memory;
-    coutry: country;
+    country: country;
     processor:processor;
     ram: ram;
     detail : detail;
